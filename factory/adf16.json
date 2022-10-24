@@ -5,6 +5,10 @@
 			"testparameter": {
 				"type": "string",
 				"value": "testvalue"
+			},
+			"parameter02": {
+				"type": "string",
+				"value": "test2"
 			}
 		}
 	},
