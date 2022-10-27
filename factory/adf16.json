@@ -1,13 +1,5 @@
 {
 	"name": "adf16",
-	"properties": {
-		"globalParameters": {
-			"testparameter": {
-				"type": "string",
-				"value": "testvalue"
-			}
-		}
-	},
 	"location": "chinaeast2",
 	"identity": {
 		"type": "SystemAssigned",
