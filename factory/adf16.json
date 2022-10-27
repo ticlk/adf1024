@@ -2,13 +2,9 @@
 	"name": "adf16",
 	"properties": {
 		"globalParameters": {
-			"testparameter": {
+			"test091": {
 				"type": "string",
-				"value": "testvalue"
-			},
-			"parameter02": {
-				"type": "string",
-				"value": "test2"
+				"value": "10"
 			}
 		}
 	},
