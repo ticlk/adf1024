@@ -1,0 +1,16 @@
+{
+	"name": "AzureDataLakeStorage3",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://storage1107.dfs.core.chinacloudapi.cn/",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmOTU4YmIwZi01MTUxLTQ3ODMtYTEwYS0xOTlkODU2YzJjNTkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "selfIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

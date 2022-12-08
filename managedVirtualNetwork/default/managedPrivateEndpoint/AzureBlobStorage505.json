@@ -1,0 +1,10 @@
+{
+	"name": "AzureBlobStorage505",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/1f2ffc2d-4f6a-4fea-b142-31ae337d6aad/resourceGroups/NetworkWatcherRG/providers/Microsoft.Storage/storageAccounts/storage0601",
+		"groupId": "blob",
+		"fqdns": [
+			"storage0601.blob.core.chinacloudapi.cn"
+		]
+	}
+}

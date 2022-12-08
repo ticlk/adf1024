@@ -1,0 +1,55 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "col01",
+				"type": "varchar"
+			},
+			{
+				"name": "col02",
+				"type": "varchar"
+			},
+			{
+				"name": "col03",
+				"type": "varchar"
+			},
+			{
+				"name": "col04",
+				"type": "varchar"
+			},
+			{
+				"name": "col05",
+				"type": "varchar"
+			},
+			{
+				"name": "col06",
+				"type": "varchar"
+			},
+			{
+				"name": "col07",
+				"type": "varchar"
+			},
+			{
+				"name": "col08",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "table1108"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
