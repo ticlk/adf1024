@@ -23,6 +23,9 @@
 		"AzureSynapseAnalytics1_connectionString": {
 			"value": ""
 		},
+		"Sftp1_password": {
+			"value": ""
+		},
 		"linkedService1_password": {
 			"value": ""
 		},
@@ -40,6 +43,12 @@
 		},
 		"HttpServer1_properties_typeProperties_url": {
 			"value": "https://[site-url]/_api/web/GetFileByServerRelativeUrl('[relative-path-to-file]')/$value"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"value": "52.131.85.108"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"value": "lihong"
 		},
 		"linkedService1_properties_typeProperties_userName": {
 			"value": "admin"
