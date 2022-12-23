@@ -61,7 +61,7 @@
 		},
 		"Sftp1_properties_typeProperties_host": {
 			"type": "string",
-			"defaultValue": "52.131.85.108"
+			"defaultValue": "10.0.0.18"
 		},
 		"Sftp1_properties_typeProperties_userName": {
 			"type": "string",
@@ -441,7 +441,7 @@
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
 									"quoteAllText": true,
-									"fileExtension": ".txt"
+									"fileExtension": ".csv"
 								}
 							},
 							"enableStaging": false,
@@ -672,6 +672,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "SftpLocation",
+						"fileName": "datatest3.csv",
 						"folderPath": "/desktination"
 					},
 					"columnDelimiter": ",",
@@ -988,9 +989,15 @@
 						"type": "SecureString",
 						"value": "[parameters('Sftp1_password')]"
 					}
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntime2",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime2')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/linkedService1')]",
@@ -1117,6 +1124,16 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime2')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/selfIR')]",

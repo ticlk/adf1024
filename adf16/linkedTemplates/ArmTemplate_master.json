@@ -61,7 +61,7 @@
 		},
 		"Sftp1_properties_typeProperties_host": {
 			"type": "string",
-			"defaultValue": "52.131.85.108"
+			"defaultValue": "10.0.0.18"
 		},
 		"Sftp1_properties_typeProperties_userName": {
 			"type": "string",
@@ -128,11 +128,11 @@
 					"AzureSynapseAnalytics1_connectionString": {
 						"value": "[parameters('AzureSynapseAnalytics1_connectionString')]"
 					},
-					"Sftp1_password": {
-						"value": "[parameters('Sftp1_password')]"
-					},
 					"AzureDataLakeStorage3_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
+					},
+					"Sftp1_password": {
+						"value": "[parameters('Sftp1_password')]"
 					},
 					"linkedService1_password": {
 						"value": "[parameters('linkedService1_password')]"
@@ -143,17 +143,26 @@
 					"HttpServer1_properties_typeProperties_url": {
 						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
 					},
+					"AzureDataLakeStorage3_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
+					},
 					"Sftp1_properties_typeProperties_host": {
 						"value": "[parameters('Sftp1_properties_typeProperties_host')]"
 					},
 					"Sftp1_properties_typeProperties_userName": {
 						"value": "[parameters('Sftp1_properties_typeProperties_userName')]"
 					},
-					"AzureDataLakeStorage3_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
-					},
 					"linkedService1_properties_typeProperties_userName": {
 						"value": "[parameters('linkedService1_properties_typeProperties_userName')]"
+					},
+					"AzureBlobStorage505_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureBlobStorage505_properties_privateLinkResourceId')]"
+					},
+					"AzureBlobStorage505_properties_groupId": {
+						"value": "[parameters('AzureBlobStorage505_properties_groupId')]"
+					},
+					"AzureBlobStorage505_properties_fqdns": {
+						"value": "[parameters('AzureBlobStorage505_properties_fqdns')]"
 					}
 				}
 			},
@@ -178,15 +187,6 @@
 					},
 					"storage1021_connectionString": {
 						"value": "[parameters('storage1021_connectionString')]"
-					},
-					"AzureBlobStorage505_properties_privateLinkResourceId": {
-						"value": "[parameters('AzureBlobStorage505_properties_privateLinkResourceId')]"
-					},
-					"AzureBlobStorage505_properties_groupId": {
-						"value": "[parameters('AzureBlobStorage505_properties_groupId')]"
-					},
-					"AzureBlobStorage505_properties_fqdns": {
-						"value": "[parameters('AzureBlobStorage505_properties_fqdns')]"
 					},
 					"AzureDataLakeStorage2_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"

@@ -45,7 +45,7 @@
 			"value": "https://[site-url]/_api/web/GetFileByServerRelativeUrl('[relative-path-to-file]')/$value"
 		},
 		"Sftp1_properties_typeProperties_host": {
-			"value": "52.131.85.108"
+			"value": "10.0.0.18"
 		},
 		"Sftp1_properties_typeProperties_userName": {
 			"value": "lihong"
