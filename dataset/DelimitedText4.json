@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "SftpLocation",
-				"fileName": "datatest3.csv",
-				"folderPath": "/desktination"
+				"fileName": "data.csv",
+				"folderPath": "/dest"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
