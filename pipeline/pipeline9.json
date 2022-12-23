@@ -61,6 +61,12 @@
 				]
 			}
 		],
+		"parameters": {
+			"parameter3": {
+				"type": "string",
+				"defaultValue": "Sheet1"
+			}
+		},
 		"annotations": []
 	}
 }
