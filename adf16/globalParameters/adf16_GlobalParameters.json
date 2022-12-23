@@ -6,5 +6,9 @@
 	"parameter1": {
 		"type": "string",
 		"value": "test1"
+	},
+	"parameter3": {
+		"type": "string",
+		"value": "sheet3"
 	}
 }
