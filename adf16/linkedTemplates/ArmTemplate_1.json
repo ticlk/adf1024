@@ -214,7 +214,7 @@
 				"type": "Excel",
 				"typeProperties": {
 					"sheetName": {
-						"value": "@pipeline().parameters.parameter3",
+						"value": "@{pipeline().parameters.parameter3}",
 						"type": "Expression"
 					},
 					"location": {
@@ -489,6 +489,12 @@
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
+				},
+				"parameters": {
+					"parameter3": {
+						"type": "string",
+						"defaultValue": "Sheet1"
+					}
 				},
 				"annotations": []
 			},
