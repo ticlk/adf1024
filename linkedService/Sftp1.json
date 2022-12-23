@@ -10,7 +10,7 @@
 			"skipHostKeyValidation": true,
 			"authenticationType": "Basic",
 			"userName": "lihong",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwYTQ4ZmQyNi05MDNmLTQwNzEtYjgzOS0xNWRkZjk5N2E4MWQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwYjIyODg5Yy0xNGIwLTQ3NWUtYTE1ZC1iN2U4ZjU3NzBjZDciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime2",
