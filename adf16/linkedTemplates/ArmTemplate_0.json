@@ -288,7 +288,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "table1108"
+					"table": "table1222"
 				}
 			},
 			"dependsOn": [
@@ -307,7 +307,10 @@
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
-				"typeProperties": {}
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "table1230"
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase1')]"

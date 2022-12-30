@@ -9,6 +9,6 @@
 	},
 	"parameter3": {
 		"type": "string",
-		"value": "Sheet1"
+		"value": "\"Sheet1\""
 	}
 }
