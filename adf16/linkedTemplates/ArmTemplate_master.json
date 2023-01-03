@@ -31,6 +31,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
 		},
+		"AzureSynapseAnalytics2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics2'"
+		},
 		"Sftp1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'Sftp1'"
@@ -128,14 +132,14 @@
 					"AzureSynapseAnalytics1_connectionString": {
 						"value": "[parameters('AzureSynapseAnalytics1_connectionString')]"
 					},
+					"AzureSynapseAnalytics2_connectionString": {
+						"value": "[parameters('AzureSynapseAnalytics2_connectionString')]"
+					},
 					"AzureDataLakeStorage3_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
 					},
 					"Sftp1_password": {
 						"value": "[parameters('Sftp1_password')]"
-					},
-					"linkedService1_password": {
-						"value": "[parameters('linkedService1_password')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
@@ -151,18 +155,6 @@
 					},
 					"Sftp1_properties_typeProperties_userName": {
 						"value": "[parameters('Sftp1_properties_typeProperties_userName')]"
-					},
-					"linkedService1_properties_typeProperties_userName": {
-						"value": "[parameters('linkedService1_properties_typeProperties_userName')]"
-					},
-					"AzureBlobStorage505_properties_privateLinkResourceId": {
-						"value": "[parameters('AzureBlobStorage505_properties_privateLinkResourceId')]"
-					},
-					"AzureBlobStorage505_properties_groupId": {
-						"value": "[parameters('AzureBlobStorage505_properties_groupId')]"
-					},
-					"AzureBlobStorage505_properties_fqdns": {
-						"value": "[parameters('AzureBlobStorage505_properties_fqdns')]"
 					}
 				}
 			},
@@ -182,11 +174,26 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"linkedService1_password": {
+						"value": "[parameters('linkedService1_password')]"
+					},
 					"AzureDataLakeStorage2_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
 					},
 					"storage1021_connectionString": {
 						"value": "[parameters('storage1021_connectionString')]"
+					},
+					"linkedService1_properties_typeProperties_userName": {
+						"value": "[parameters('linkedService1_properties_typeProperties_userName')]"
+					},
+					"AzureBlobStorage505_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureBlobStorage505_properties_privateLinkResourceId')]"
+					},
+					"AzureBlobStorage505_properties_groupId": {
+						"value": "[parameters('AzureBlobStorage505_properties_groupId')]"
+					},
+					"AzureBlobStorage505_properties_fqdns": {
+						"value": "[parameters('AzureBlobStorage505_properties_fqdns')]"
 					},
 					"AzureDataLakeStorage2_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
