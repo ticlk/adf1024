@@ -32,6 +32,18 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "fname",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "fname",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
 									"name": "fnum",
 									"type": "Decimal",
 									"physicalType": "decimal",
