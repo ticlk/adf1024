@@ -43,6 +43,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'linkedService1'"
 		},
+		"linkedService2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService2'"
+		},
 		"storage1021_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'storage1021'"
@@ -222,9 +226,16 @@
 							},
 							"sink": {
 								"type": "SqlDWSink",
-								"writeBehavior": "Insert"
+								"allowCopyCommand": true,
+								"copyCommandSettings": {}
 							},
-							"enableStaging": false,
+							"enableStaging": true,
+							"stagingSettings": {
+								"linkedServiceName": {
+									"referenceName": "linkedService2",
+									"type": "LinkedServiceReference"
+								}
+							},
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
@@ -275,7 +286,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AzureSynapseAnalyticsTable2')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSynapseAnalyticsTable3')]"
+				"[concat(variables('factoryId'), '/datasets/AzureSynapseAnalyticsTable3')]",
+				"[concat(variables('factoryId'), '/linkedServices/linkedService2')]"
 			]
 		},
 		{
@@ -1306,6 +1318,19 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/linkedService2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('linkedService2_connectionString')]"
+				}
+			},
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/storage1021')]",

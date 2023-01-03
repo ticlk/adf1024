@@ -32,6 +32,9 @@
 		"linkedService1_password": {
 			"value": ""
 		},
+		"linkedService2_connectionString": {
+			"value": ""
+		},
 		"storage1021_connectionString": {
 			"value": ""
 		},

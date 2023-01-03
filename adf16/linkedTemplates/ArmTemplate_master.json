@@ -43,6 +43,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'linkedService1'"
 		},
+		"linkedService2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService2'"
+		},
 		"storage1021_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'storage1021'"
@@ -135,11 +139,11 @@
 					"AzureSynapseAnalytics2_connectionString": {
 						"value": "[parameters('AzureSynapseAnalytics2_connectionString')]"
 					},
+					"linkedService2_connectionString": {
+						"value": "[parameters('linkedService2_connectionString')]"
+					},
 					"AzureDataLakeStorage3_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
-					},
-					"Sftp1_password": {
-						"value": "[parameters('Sftp1_password')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
@@ -149,12 +153,6 @@
 					},
 					"AzureDataLakeStorage3_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
-					},
-					"Sftp1_properties_typeProperties_host": {
-						"value": "[parameters('Sftp1_properties_typeProperties_host')]"
-					},
-					"Sftp1_properties_typeProperties_userName": {
-						"value": "[parameters('Sftp1_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -174,6 +172,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"Sftp1_password": {
+						"value": "[parameters('Sftp1_password')]"
+					},
 					"linkedService1_password": {
 						"value": "[parameters('linkedService1_password')]"
 					},
@@ -182,6 +183,12 @@
 					},
 					"storage1021_connectionString": {
 						"value": "[parameters('storage1021_connectionString')]"
+					},
+					"Sftp1_properties_typeProperties_host": {
+						"value": "[parameters('Sftp1_properties_typeProperties_host')]"
+					},
+					"Sftp1_properties_typeProperties_userName": {
+						"value": "[parameters('Sftp1_properties_typeProperties_userName')]"
 					},
 					"linkedService1_properties_typeProperties_userName": {
 						"value": "[parameters('linkedService1_properties_typeProperties_userName')]"
