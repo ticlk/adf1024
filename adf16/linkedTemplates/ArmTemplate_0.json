@@ -288,7 +288,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "table1222"
+					"table": "table0103"
 				}
 			},
 			"dependsOn": [
@@ -309,7 +309,7 @@
 				"schema": [],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "table1230"
+					"table": "table0104"
 				}
 			},
 			"dependsOn": [
