@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
 		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
@@ -79,6 +83,10 @@
 			"type": "string",
 			"defaultValue": "admin"
 		},
+		"sharepointHttpServer2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mcpbi.sharepoint.cn/sites/lhsite/_api/web/GetFileByServerRelativeUrl('/sites/lhsite/Shared%20Documents/test.xlsx')/$value"
+		},
 		"trigger2_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/1f2ffc2d-4f6a-4fea-b142-31ae337d6aad/resourceGroups/NetworkWatcherRG/providers/Microsoft.Storage/storageAccounts/storage0601"
@@ -127,6 +135,9 @@
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
@@ -147,6 +158,9 @@
 					},
 					"HttpServer1_properties_typeProperties_url": {
 						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					},
+					"sharepointHttpServer2_properties_typeProperties_url": {
+						"value": "[parameters('sharepointHttpServer2_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -204,6 +218,26 @@
 					},
 					"AzureDataLakeStorage2_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf16_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "adf16_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"trigger2_properties_typeProperties_scope": {
 						"value": "[parameters('trigger2_properties_typeProperties_scope')]"
@@ -211,7 +245,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'adf16_ArmTemplate_0')]"
+				"[resourceId('Microsoft.Resources/deployments', 'adf16_ArmTemplate_1')]"
 			]
 		}
 	]

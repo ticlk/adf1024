@@ -8,6 +8,9 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
@@ -58,6 +61,9 @@
 		},
 		"linkedService1_properties_typeProperties_userName": {
 			"value": "admin"
+		},
+		"sharepointHttpServer2_properties_typeProperties_url": {
+			"value": "https://mcpbi.sharepoint.cn/sites/lhsite/_api/web/GetFileByServerRelativeUrl('/sites/lhsite/Shared%20Documents/test.xlsx')/$value"
 		},
 		"trigger2_properties_typeProperties_scope": {
 			"value": "/subscriptions/1f2ffc2d-4f6a-4fea-b142-31ae337d6aad/resourceGroups/NetworkWatcherRG/providers/Microsoft.Storage/storageAccounts/storage0601"
