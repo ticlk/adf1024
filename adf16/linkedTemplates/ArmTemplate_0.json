@@ -68,7 +68,7 @@
 							"headers": {
 								"Content-Type": "application/x-www-form-urlencoded"
 							},
-							"body": "grant_type=client_credentials&client_id=355caa53-3507-4c95-98b9-a5d1ad80fe02@5691a5bf-29c0-43e2-b547-1377a4110078&client_secret=HEVMpn1vq.7Z.aSt~33i.VM_2d1QaS_69E&resource=00000003-0000-0ff1-ce00-000000000000/mcpbi.sharepoint.com@5691a5bf-29c0-43e2-b547-1377a4110078"
+							"body": "grant_type=client_credentials&client_id=355caa53-3507-4c95-98b9-a5d1ad80fe02@5691a5bf-29c0-43e2-b547-1377a4110078&client_secret=HEVMpn1vq.7Z.aSt~33i.VM_2d1QaS_69E&resource=00000003-0000-0ff1-ce00-000000000000/mcpbi.sharepoint.cn@5691a5bf-29c0-43e2-b547-1377a4110078"
 						}
 					}
 				],
