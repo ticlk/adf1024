@@ -41,6 +41,9 @@
 		"storage1021_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://storage0601.dfs.core.chinacloudapi.cn/"
 		},
