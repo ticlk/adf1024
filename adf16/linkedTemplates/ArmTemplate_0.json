@@ -4,36 +4,36 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory name",
+			"metadata": "数据工厂名称",
 			"defaultValue": "adf16"
 		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+			"metadata": "“AzureBlobStorage1”的“connectionString”的安全字符串"
 		},
 		"AzureBlobStorage2_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+			"metadata": "“AzureBlobStorage2”的“connectionString”的安全字符串"
 		},
 		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+			"metadata": "“AzureDataLakeStorage1”的“accountKey”的安全字符串"
 		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+			"metadata": "“AzureSqlDatabase1”的“connectionString”的安全字符串"
 		},
 		"AzureSynapseAnalytics1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
+			"metadata": "“AzureSynapseAnalytics1”的“connectionString”的安全字符串"
 		},
 		"AzureSynapseAnalytics2_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics2'"
+			"metadata": "“AzureSynapseAnalytics2”的“connectionString”的安全字符串"
 		},
 		"linkedService2_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'linkedService2'"
+			"metadata": "“linkedService2”的“connectionString”的安全字符串"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",

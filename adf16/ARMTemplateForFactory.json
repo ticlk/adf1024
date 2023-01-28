@@ -4,56 +4,56 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory name",
+			"metadata": "数据工厂名称",
 			"defaultValue": "adf16"
 		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+			"metadata": "“AzureBlobStorage1”的“connectionString”的安全字符串"
 		},
 		"AzureBlobStorage2_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+			"metadata": "“AzureBlobStorage2”的“connectionString”的安全字符串"
 		},
 		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+			"metadata": "“AzureDataLakeStorage1”的“accountKey”的安全字符串"
 		},
 		"AzureDataLakeStorage2_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+			"metadata": "“AzureDataLakeStorage2”的“accountKey”的安全字符串"
 		},
 		"AzureDataLakeStorage3_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage3'"
+			"metadata": "“AzureDataLakeStorage3”的“accountKey”的安全字符串"
 		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+			"metadata": "“AzureSqlDatabase1”的“connectionString”的安全字符串"
 		},
 		"AzureSynapseAnalytics1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
+			"metadata": "“AzureSynapseAnalytics1”的“connectionString”的安全字符串"
 		},
 		"AzureSynapseAnalytics2_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics2'"
+			"metadata": "“AzureSynapseAnalytics2”的“connectionString”的安全字符串"
 		},
 		"Sftp1_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'Sftp1'"
+			"metadata": "“Sftp1”的“password”的安全字符串"
 		},
 		"linkedService1_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'linkedService1'"
+			"metadata": "“linkedService1”的“password”的安全字符串"
 		},
 		"linkedService2_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'linkedService2'"
+			"metadata": "“linkedService2”的“connectionString”的安全字符串"
 		},
 		"storage1021_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'storage1021'"
+			"metadata": "“storage1021”的“connectionString”的安全字符串"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -255,7 +255,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"source": {
-								"type": "BinarySource",
+								"type": "ExcelSource",
 								"storeSettings": {
 									"type": "HttpReadSettings",
 									"requestMethod": "GET",
@@ -264,29 +264,31 @@
 										"type": "Expression"
 									},
 									"requestTimeout": ""
-								},
-								"formatSettings": {
-									"type": "BinaryReadSettings"
 								}
 							},
 							"sink": {
-								"type": "BinarySink",
+								"type": "DelimitedTextSink",
 								"storeSettings": {
 									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
 								}
 							},
 							"enableStaging": false
 						},
 						"inputs": [
 							{
-								"referenceName": "Binary2",
+								"referenceName": "Excel2",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "Binary1",
+								"referenceName": "DelimitedText5",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -300,8 +302,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/Binary2')]",
-				"[concat(variables('factoryId'), '/datasets/Binary1')]"
+				"[concat(variables('factoryId'), '/datasets/Excel2')]",
+				"[concat(variables('factoryId'), '/datasets/DelimitedText5')]"
 			]
 		},
 		{
@@ -1020,6 +1022,33 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/Sftp1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText5')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "test28.csv",
+						"container": "test09"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage2')]"
 			]
 		},
 		{
