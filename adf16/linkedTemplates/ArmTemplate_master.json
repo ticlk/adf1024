@@ -142,17 +142,11 @@
 					"linkedService2_connectionString": {
 						"value": "[parameters('linkedService2_connectionString')]"
 					},
-					"AzureDataLakeStorage3_accountKey": {
-						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
-					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
 					"HttpServer1_properties_typeProperties_url": {
 						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
-					},
-					"AzureDataLakeStorage3_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -172,6 +166,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureDataLakeStorage3_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
+					},
 					"Sftp1_password": {
 						"value": "[parameters('Sftp1_password')]"
 					},
@@ -183,6 +180,9 @@
 					},
 					"storage1021_connectionString": {
 						"value": "[parameters('storage1021_connectionString')]"
+					},
+					"AzureDataLakeStorage3_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
 					},
 					"Sftp1_properties_typeProperties_host": {
 						"value": "[parameters('Sftp1_properties_typeProperties_host')]"
