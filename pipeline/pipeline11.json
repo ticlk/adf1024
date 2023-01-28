@@ -44,34 +44,36 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "BinarySource",
+						"type": "ExcelSource",
 						"storeSettings": {
 							"type": "HttpReadSettings",
 							"requestMethod": "GET",
 							"additionalHeaders": "@{concat('Authorization: Bearer ', activity('GenaratorBearToken').output.access_token)}",
 							"requestTimeout": ""
-						},
-						"formatSettings": {
-							"type": "BinaryReadSettings"
 						}
 					},
 					"sink": {
-						"type": "BinarySink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
-						"referenceName": "Binary2",
+						"referenceName": "Excel2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Binary1",
+						"referenceName": "DelimitedText5",
 						"type": "DatasetReference"
 					}
 				]
