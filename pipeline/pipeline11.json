@@ -22,6 +22,56 @@
 					},
 					"body": "grant_type=client_credentials&client_id=355caa53-3507-4c95-98b9-a5d1ad80fe02@5691a5bf-29c0-43e2-b547-1377a4110078&client_secret=HEVMpn1vq.7Z.aSt~33i.VM_2d1QaS_69E&resource=00000003-0000-0ff1-ce00-000000000000/mcpbi.sharepoint.cn@5691a5bf-29c0-43e2-b547-1377a4110078"
 				}
+			},
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "GenaratorBearToken",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET",
+							"additionalHeaders": "@{concat('Authorization: Bearer ', activity('GenaratorBearToken').output.access_token)}",
+							"requestTimeout": ""
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Excel2",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Binary1",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
