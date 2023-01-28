@@ -44,12 +44,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "ExcelSource",
+						"type": "BinarySource",
 						"storeSettings": {
 							"type": "HttpReadSettings",
 							"requestMethod": "GET",
 							"additionalHeaders": "@{concat('Authorization: Bearer ', activity('GenaratorBearToken').output.access_token)}",
 							"requestTimeout": ""
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
 						}
 					},
 					"sink": {
@@ -62,7 +65,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Excel2",
+						"referenceName": "Binary2",
 						"type": "DatasetReference"
 					}
 				],
