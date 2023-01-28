@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
-				"type": "Copy",
+				"name": "GenaratorBearToken",
+				"type": "WebActivity",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -15,61 +15,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "SqlDWSource",
-						"sqlReaderQuery": "select fname, fnum from table0103",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"sink": {
-						"type": "SqlDWSink",
-						"allowCopyCommand": true
-					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "linkedService2",
-							"type": "LinkedServiceReference"
-						}
-					},
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "fname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "fname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "fnum",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "fnum",
-									"type": "Decimal"
-								}
-							}
-						]
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "AzureSynapseAnalyticsTable2",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSynapseAnalyticsTable3",
-						"type": "DatasetReference"
-					}
-				]
+					"url": "https://accounts.accesscontrol.chinacloudapi.cn/355caa53-3507-4c95-98b9-a5d1ad80fe02/tokens/OAuth/2",
+					"method": "POST",
+					"body": "grant_type=client_credentials&client_id=355caa53-3507-4c95-98b9-a5d1ad80fe02@5691a5bf-29c0-43e2-b547-1377a4110078&client_secret=HEVMpn1vq.7Z.aSt~33i.VM_2d1QaS_69E&resource=00000003-0000-0ff1-ce00-000000000000/mcpbi.sharepoint.com@5691a5bf-29c0-43e2-b547-1377a4110078"
+				}
 			}
 		],
 		"annotations": []
