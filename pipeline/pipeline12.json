@@ -16,6 +16,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": "https://accounts.accesscontrol.windows.net/a1f1e214-7ded-45b6-81a1-9e8ae3459641/tokens/OAuth/2",
+					"connectVia": {
+						"referenceName": "integrationRuntime1",
+						"type": "IntegrationRuntimeReference"
+					},
 					"method": "POST",
 					"headers": {
 						"Content-Type": "application/x-www-form-urlencoded"
