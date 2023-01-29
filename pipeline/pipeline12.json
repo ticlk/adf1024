@@ -1,0 +1,29 @@
+{
+	"name": "pipeline12",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://accounts.accesscontrol.windows.net/a1f1e214-7ded-45b6-81a1-9e8ae3459641/tokens/OAuth/2",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					"body": "grant_type=client_credentials&client_id=174e0451-16a6-4f3f-9fbe-9745777debd5@a1f1e214-7ded-45b6-81a1-9e8ae3459641\n&client_secret=Y2oyX2RvOE7xum+ly0qvQ+QUsRThWO/eL0gDLJxAxOU=&resource=00000003-0000-0ff1-ce00-000000000000/apps.jci.com@a1f1e214-7ded-45b6-81a1-9e8ae3459641"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
