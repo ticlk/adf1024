@@ -4,40 +4,40 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "数据工厂名称",
+			"metadata": "Data Factory name",
 			"defaultValue": "adf16"
 		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
-			"metadata": "“AzureBlobStorage1”的“connectionString”的安全字符串"
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
 		"AzureBlobStorage2_connectionString": {
 			"type": "secureString",
-			"metadata": "“AzureBlobStorage2”的“connectionString”的安全字符串"
-		},
-		"AzureDataLakeStorage1_accountKey": {
-			"type": "secureString",
-			"metadata": "“AzureDataLakeStorage1”的“accountKey”的安全字符串"
-		},
-		"AzureSqlDatabase1_connectionString": {
-			"type": "secureString",
-			"metadata": "“AzureSqlDatabase1”的“connectionString”的安全字符串"
-		},
-		"AzureSynapseAnalytics1_connectionString": {
-			"type": "secureString",
-			"metadata": "“AzureSynapseAnalytics1”的“connectionString”的安全字符串"
-		},
-		"AzureSynapseAnalytics2_connectionString": {
-			"type": "secureString",
-			"metadata": "“AzureSynapseAnalytics2”的“connectionString”的安全字符串"
-		},
-		"linkedService2_connectionString": {
-			"type": "secureString",
-			"metadata": "“linkedService2”的“connectionString”的安全字符串"
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
 		},
 		"AzureBlobStorage3_connectionString": {
 			"type": "secureString",
-			"metadata": "“AzureBlobStorage3”的“connectionString”的安全字符串"
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
+		},
+		"AzureSynapseAnalytics2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics2'"
+		},
+		"linkedService2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService2'"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -78,6 +78,19 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureBlobStorage2_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage3_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -231,15 +244,38 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage3')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"name": "[concat(parameters('factoryName'), '/pipeline12')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage3_connectionString')]"
-				}
+				"activities": [
+					{
+						"name": "Web1",
+						"type": "WebActivity",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "https://accounts.accesscontrol.windows.net/a1f1e214-7ded-45b6-81a1-9e8ae3459641/tokens/OAuth/2",
+							"method": "POST",
+							"headers": {
+								"Content-Type": "application/x-www-form-urlencoded"
+							},
+							"body": "grant_type=client_credentials&client_id=174e0451-16a6-4f3f-9fbe-9745777debd5@a1f1e214-7ded-45b6-81a1-9e8ae3459641\n&client_secret=Y2oyX2RvOE7xum+ly0qvQ+QUsRThWO/eL0gDLJxAxOU=&resource=00000003-0000-0ff1-ce00-000000000000/apps.jci.com@a1f1e214-7ded-45b6-81a1-9e8ae3459641"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
 			},
 			"dependsOn": []
 		},
@@ -413,43 +449,6 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "table0103"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSynapseAnalytics2')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSynapseAnalyticsTable3')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSynapseAnalytics2",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [
-					{
-						"name": "id",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "fname",
-						"type": "varchar"
-					},
-					{
-						"name": "fnum",
-						"type": "decimal",
-						"precision": 7,
-						"scale": 3
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "table0104"
 				}
 			},
 			"dependsOn": [
