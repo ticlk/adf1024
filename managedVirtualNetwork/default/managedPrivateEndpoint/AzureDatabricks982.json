@@ -1,0 +1,10 @@
+{
+	"name": "AzureDatabricks982",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/1f2ffc2d-4f6a-4fea-b142-31ae337d6aad/resourceGroups/dashboards/providers/Microsoft.Databricks/workspaces/bricks0216",
+		"groupId": "databricks_ui_api",
+		"fqdns": [
+			"adb-1136394882495641.1.databricks.azure.cn"
+		]
+	}
+}
