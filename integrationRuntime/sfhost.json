@@ -1,0 +1,6 @@
+{
+	"name": "sfhost",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
