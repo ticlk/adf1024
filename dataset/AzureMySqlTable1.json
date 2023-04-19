@@ -7,6 +7,21 @@
 		},
 		"annotations": [],
 		"type": "AzureMySqlTable",
-		"schema": []
-	}
+		"schema": [
+			{
+				"name": "id",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "fname",
+				"precision": 200,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"tableName": "`table0302`"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
