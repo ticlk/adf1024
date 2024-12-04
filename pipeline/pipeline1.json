@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Notebook1",
-				"type": "DatabricksNotebook",
+				"name": "Copy data1",
+				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -15,28 +15,40 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/li.hong@microsoftinternal.partner.onmschina.cn/notebook01",
-					"baseParameters": {
-						"name": {
-							"value": "@pipeline().parameters.name",
-							"type": "Expression"
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
 						}
-					}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						}
+					},
+					"enableStaging": false
 				},
-				"linkedServiceName": {
-					"referenceName": "AzureDatabricks1",
-					"type": "LinkedServiceReference"
-				}
+				"inputs": [
+					{
+						"referenceName": "Binary1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Binary2",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
-		"parameters": {
-			"name": {
-				"type": "string",
-				"defaultValue": "test"
-			}
-		},
 		"annotations": [],
-		"lastPublishTime": "2023-02-20T09:31:49Z"
+		"lastPublishTime": "2024-11-11T09:34:43Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

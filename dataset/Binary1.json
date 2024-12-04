@@ -2,17 +2,18 @@
 	"name": "Binary1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage2",
+			"referenceName": "test0523",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"fileName": "test.xlsx",
-				"container": "test09"
+				"type": "AzureBlobFSLocation",
+				"fileName": "FilestreamDB_data.mdf",
+				"fileSystem": "test0523liu"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

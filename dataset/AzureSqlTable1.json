@@ -14,41 +14,19 @@
 				"precision": 10
 			},
 			{
-				"name": "col01",
+				"name": "fname",
 				"type": "varchar"
 			},
 			{
-				"name": "col02",
-				"type": "varchar"
-			},
-			{
-				"name": "col03",
-				"type": "varchar"
-			},
-			{
-				"name": "col04",
-				"type": "varchar"
-			},
-			{
-				"name": "col05",
-				"type": "varchar"
-			},
-			{
-				"name": "col06",
-				"type": "varchar"
-			},
-			{
-				"name": "col07",
-				"type": "varchar"
-			},
-			{
-				"name": "col08",
-				"type": "varchar"
+				"name": "fnum",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 5
 			}
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "table0103"
+			"table": "table1120"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
